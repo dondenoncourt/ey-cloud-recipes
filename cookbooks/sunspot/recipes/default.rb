@@ -49,7 +49,7 @@ node[:applications].each do |app,data|
     user node[:owner_name]
     group node[:owner_name]
     command("if [ ! -e /data/#{app}/jettyapps/solr ]; then cd /data/#{app}/jettyapps && " +
-            "wget -O apache-solr-#{SOLR_VERSION}.tgz http://mirror.cc.columbia.edu/pub/software/apache/lucene/solr/#{SOLR_VERSION}/apache-solr-#{SOLR_VERSION}.tgz && " +
+            "wget -O apache-solr-#{SOLR_VERSION}.tgz http://archive.apache.org/dist/lucene/solr/#{SOLR_VERSION}/apache-solr-#{SOLR_VERSION}.tgz && " +
             "tar -xzf apache-solr-#{SOLR_VERSION}.tgz && " +
             "mv apache-solr-#{SOLR_VERSION}/example solr && " +
             "rm -rf apache-solr-#{SOLR_VERSION}; fi")
@@ -68,12 +68,15 @@ node[:applications].each do |app,data|
     action :install
   end
  
-  execute "install-sunspot-solr" do
-    user node[:owner_name]
-    group node[:owner_name]
-    command "sunspot-installer -f /data/#{app}/jettyapps/solr/solr"
-    action :run
-  end
+  # consider what is in 
+  # https://github.com/sunspot/sunspot/wiki/Ubuntu-10.04-lts-server
+
+  #execute "install-sunspot-solr" do
+    #user node[:owner_name]
+    #group node[:owner_name]
+    #command "sunspot-installer -f /data/#{app}/jettyapps/solr/solr"
+    #action :run
+  #end
   
   execute "restart-monit-solr" do
     command "/usr/bin/monit reload && " +
