@@ -7,7 +7,7 @@ require_recipe "delayed_job"
 #end
 
 # uncomment to turn on thinking sphinx/ultra sphinx. Remember to edit cookbooks/sphinx/recipes/default.rb first!
-# require_recipe "sphinx"
+ require_recipe "sphinx"
 
 #uncomment to turn on memcached
 # require_recipe "memcached"
@@ -25,7 +25,7 @@ require_recipe "delayed_job"
 #require_recipe "ssmtp"
 
 #uncomment to run the sunspot recipe
- require_recipe "sunspot"
+ #require_recipe "sunspot"
 
 #uncomment to run the exim recipe
 #exim_auth "auth" do
