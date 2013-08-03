@@ -123,11 +123,11 @@
           end
 
           #execute "gem install bundler"
-          #gem_package "bundler" do 
-            #source "http://rubygems.org" 
-            #action :install 
-            #version "1.0.21" 
-          #end
+          gem_package "bundler" do 
+            source "https://rubygems.org" 
+            action :install 
+            version "1.0.21" 
+          end
 
           execute "sphinx config" do
             command "bundle exec rake #{flavor}:configure"
@@ -232,11 +232,11 @@
           end
 
           #execute "gem install bundler"
-          #gem_package "bundler" do 
-            #source "http://rubygems.org" 
-            #action :install 
-            #version "1.0.21" 
-          #end
+          gem_package "bundler" do 
+            source "https://rubygems.org" 
+            action :install 
+            version "1.0.21" 
+          end
 
 
           execute "sphinx config" do
