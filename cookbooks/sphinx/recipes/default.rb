@@ -122,7 +122,7 @@
             })
           end
 
-          #execute "gem install bundler"
+          execute "gem install bundler"
           #gem_package "bundler" do 
             #source "https://rubygems.org" 
             #action :install 
@@ -231,7 +231,7 @@
             })
           end
 
-          #execute "gem install bundler"
+          execute "gem install bundler"
           #gem_package "bundler" do 
             #source "https://rubygems.org" 
             #action :install 
