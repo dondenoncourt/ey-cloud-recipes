@@ -1,9 +1,5 @@
 require_recipe "delayed_job"
 
-execute "install-bundler" do
-  command "gem install bundler"
-end
-
 #execute "testing" do
 #  command %Q{
 #    echo "i ran at #{Time.now}" >> /root/cheftime
